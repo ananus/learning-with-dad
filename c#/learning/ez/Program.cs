@@ -2,24 +2,35 @@
 
 class Program
 {
+    static string ToBin(Int64 dec, Int64 b)
+    {
+        string s = "";
+        while (dec > 0)
+        {
+            s = dec % b + s;
+            dec /= b;
+        }
+        return s;
+    }
+
     static void Main(string[] args)
     {
         Console.Write("Please insert un number: ");
         string Input = Console.ReadLine();
-        Int64 num = Int64.Parse(Input.Trim());
-        string s=""; 
-        while (num > 0)
+        string trimmed = Input.Trim();
+        Int64 num;
+        if (Int64.TryParse(trimmed, out num))
         {
-            if (num % 2 == 0)
+            for (int b = 2; b <= 9; b++)
             {
-                s = "0" + s;
+                string s = ToBin(num, b);
+                Console.WriteLine("COnverted \"{0}\" to {1} using base {2}" , Input, s, b);
             }
-            else
-            {
-                s = "1" + s;
-            }
-            num /= 2;
         }
-        Console.WriteLine(s);
+        else
+        {
+            Console.WriteLine("Input \"{0}\" is not a valid number." , Input);
+        }
+       
     }
 }
