@@ -34,13 +34,12 @@ namespace GUI_for_ToBin
             Int64 num;
             if (Int64.TryParse(trimmed, out num))
             {
-                for (int b = 2; b <=2; b++)
-                {
-                    string s = ToBin(num, b);
-
-                
+                string s = ToBin(num, 2);
                 converted.Text = s;
-                }
+            }
+            else
+            {
+                converted.Text = ("The entered text is invalid");
             }
             
         }

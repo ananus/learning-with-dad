@@ -30,7 +30,7 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.decimalNumber = new System.Windows.Forms.Label();
-            this.converted = new System.Windows.Forms.Label();
+            this.converted = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -52,11 +52,11 @@
             // 
             // converted
             // 
-            this.converted.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.converted.Location = new System.Drawing.Point(15, 88);
+            this.converted.FormattingEnabled = true;
+            this.converted.Location = new System.Drawing.Point(12, 79);
             this.converted.Name = "converted";
-            this.converted.Size = new System.Drawing.Size(188, 21);
-            this.converted.TabIndex = 2;
+            this.converted.Size = new System.Drawing.Size(191, 21);
+            this.converted.TabIndex = 3;
             // 
             // Form1
             // 
@@ -77,7 +77,7 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label decimalNumber;
-        private System.Windows.Forms.Label converted;
+        private System.Windows.Forms.ComboBox converted;
     }
 }
 
